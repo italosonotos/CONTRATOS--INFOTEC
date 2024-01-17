@@ -1,0 +1,295 @@
+:root {
+    font-size: 62.5%;
+    --Roxo-Escuro: #1c1c2b;
+    --Verde-Claro: #bdff00;
+    --Verde-Escuro: #558028;
+    --Branco: #ffffff;
+    --Preto: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    /*background: rgb(85,128,40);*/
+    background-color: #1d1929;
+    background: linear-gradient(
+        90deg,
+        rgba(85, 128, 40, 1) 6%,
+        rgba (182, 222, 62, 1) 35%,
+        rgba(85, 128, 40, 1)  
+    );
+    color: var(--Branco);
+}
+
+/*-----ÁREA DE CABEÇALHO-----*/
+
+img {
+    width: 200px;
+}
+
+nav {
+    padding: 2rem 5rem 1rem;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 2rem;
+    font-size: 2rem;
+}
+
+/* CORPO BOTÃO DE BAIXAR CONTRATO */
+
+.cta {
+    width: 200px;
+    font-weight: bold;
+    display: flex;
+    padding: 11px 30px;
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--Roxo-Escuro);
+    background: var(--Verde-Claro);
+    transition: 0.3s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+    border: none;
+    cursor: pointer;
+}
+
+.cta:focus {
+    outline: none;
+}
+
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 var(--Verde-Escuro);
+}
+
+.cta .second {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+
+.cta:hover .second {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+.span {
+    transform: skewX(15deg);
+}
+
+.second {
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+    transform: rotate(87deg);
+}
+
+.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.cta:hover .three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover .one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover .two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+    0% {
+        fill: var(--Roxo-Escuro);
+    }
+
+    50% {
+        fill: var(--Verde-Claro);
+    }
+
+    100% {
+        fill: var(--Verde-Escuro);
+    }
+}
+
+.buttonDownload{
+    display: none;
+}
+
+/*-----CORPO-----*/
+
+#titulo h1 {
+    display: block;
+    font-size: 3.4em;
+}
+
+#btnContratos button {
+    padding: 30px;
+    width: 200px;
+    height: 150px;
+    border-radius: 25px;
+    border: none;
+    margin: 100px 25px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: transform 0.3s;
+    transform: translatex(5) scale(1.1);
+}
+
+#btnContratos button:hover {
+    transform: translateX(6px) scale(1.2);
+    cursor: pointer;
+    box-shadow: 1px 1px 10px var(--Verde-Claro);
+}
+
+a {
+    text-decoration: none;
+    color: var(--Roxo-Escuro);
+}
+
+/* CORPO - BOTÕES */
+
+#inbtnWtpm {
+    background-image: url(./assets/watchParamont-nw.png);
+}
+
+#inbtnIp {
+    background-image: url(./assets/infotecPlay_.png);
+}
+
+#inbtnHbom {
+    background-image: url(./assets/hboMax.png);
+}
+
+#inbtnIt {
+    background-image: url(./assets/infotecTelecon_.png);
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 600px) {
+   
+    body {
+        display: grid;
+    }
+
+    img {
+        /*Logo infotec */
+        width: 120px;
+    }
+
+    h1{
+        margin:50px 0 50px;
+    }
+
+    .cta {
+        display: none;
+    }
+
+    #btnContratos button {
+        width: 180px;
+        margin: 10px;
+    }
+
+    .buttonDownload {
+        display: inline-block;
+        position: relative;
+        padding: 10px 25px;
+        width: 150px;
+        background-color: var(--Verde-Claro);
+        color: var(--Roxo-Escuro);
+        font-family: sans-serif;
+        text-decoration: none;
+        font-size: 0.5em;
+        text-align: center;
+        text-indent: 15px;
+        border: none;
+        border-radius: 20px;
+
+        margin-left: 60px;
+       }
+       
+       .buttonDownload:hover {
+        background-color: var(--Verde-Escuro);
+        color:var(--Branco);
+       }
+       
+       .buttonDownload:before, .buttonDownload:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 52%;
+       }
+       
+       .buttonDownload:before {
+        width: 10px;
+        height: 2px;
+        border-style: solid;
+        border-width: 0 2px 2px;
+       }
+       
+       .buttonDownload:after {
+        width: 0;
+        height: 0;
+        margin-left: 3px;
+        margin-top: -7px;
+        border-style: solid;
+        border-width: 4px 4px 0 4px;
+        border-color: transparent;
+        border-top-color: inherit;
+        animation: downloadArrow 1s linear infinite;
+        animation-play-state: paused;
+       }
+       
+       .buttonDownload:hover:before {
+        border-color: #cdefbd;
+       }
+       
+       .buttonDownload:hover:after {
+        border-top-color: #cdefbd;
+        animation-play-state: running;
+       }
+       
+       @keyframes downloadArrow {
+        0% {
+         margin-top: -7px;
+         opacity: 1;
+        }
+       
+        0.001% {
+         margin-top: -15px;
+         opacity: 0.4;
+        }
+       
+        50% {
+         opacity: 1;
+        }
+       
+        100% {
+         margin-top: 0;
+         opacity: 0.4;
+        }
+       }
+}
